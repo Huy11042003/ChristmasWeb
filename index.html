@@ -45,8 +45,8 @@
 
 
     .circle-image {
-      width: 220px;
-      height: 220px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       padding: 6px;
       background: linear-gradient(135deg, #ff7eb3, #65d6ce, #7f7cff);
@@ -66,7 +66,7 @@
     }
     @media (max-width: 600px) {
       body { padding: 10px; }
-      h1 { font-size: 32px; padding: 60px;}
+      h1 { font-size: 32px; padding: 100px;}
       h2 { font-size: 26px; }
       h3 { font-size: 20px; }
       img { max-width: 100%; }
@@ -107,7 +107,7 @@
   <!-- Page 1 -->
   <div id="page1" class="page active">
     <h1></h1>
-    <h2>M sẽ đi chơi Noel với t chứ?</h2>
+    <h2>Noel này m có rảnh để đi chơi với t khom? &#128535;</h2>
     <div class="button-row">
       <button onclick="goToPage(2)">Có</button>
       <button onclick="goToPage(2)">Kó</button>
@@ -119,14 +119,14 @@
   <div id="page2" class="page">
     <h1></h1>
     <h2>Chọn ngày đi nè &#128525;</h2>
-    <input id="selectedDate" type="date" value="2025-12-25" style="display:block;margin:20px auto;padding:10px;font-size:18px;">
+    <input id="selectedDate" type="date" value="2025-12-24" style="display:block;margin:20px auto;padding:10px;font-size:18px;">
     <button onclick="saveDate()">Submit</button>
   </div>
 
   <!-- Page 3 -->
   <div id="page3" class="page">
     <h1></h1>
-    <h2>Chọn chỗ đi, bao nhiêu cũng dc nha &#128535;</h2>
+    <h2>Chọn chỗ đi, bao nhiêu cũng dc nha &#128541;</h2>
 
     <div class="image-item">
       <div class="circle-image">
@@ -146,7 +146,7 @@
       <div class="circle-image">
         <img src="longwang.jpg" alt="Image 3">
       </div>
-        <label style="display:block;margin-top:8px;"><input type="checkbox" value="Image 3"> Long Wang</label>
+        <label style="display:block;margin-top:8px;"><input type="checkbox" value="Image 3"> Hấp Thủy Nhiệt</label>
     </div>
 
     <div class="image-item">
@@ -154,6 +154,13 @@
         <img src="chean.jpg" alt="Image 4">
       </div>
         <label style="display:block;margin-top:8px;"><input type="checkbox" value="Image 4"> Chè An</label>
+    </div>
+
+    <div class="image-item">
+      <div class="circle-image">
+        <img src="nhatho.jpg" alt="Image 4">
+      </div>
+        <label style="display:block;margin-top:8px;"><input type="checkbox" value="Image 4"> Nhà Thờ Đức Bà</label>
     </div>
     <button onclick="submitImages()">Submit</button>
   </div>
