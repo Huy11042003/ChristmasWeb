@@ -15,7 +15,7 @@
       background-size: cover; 
       align-items: center;
       justify-content: center;}
-    h1, h2, h3 { text-align: center; color: #2b3a67; }
+    h1, h2, h3 { text-align: center; color: #2b3a67; font-family: "PlaywriteVN", cursive;}
     h1 { font-size: 42px; }
     h2 { font-size: 32px; }
     h3 { font-size: 24px; }
@@ -118,13 +118,8 @@
   <div id="page0" class="page active"></div>
     <div class="container">
         <div class="envelope-wrapper">
-            <div class="envelope">
-                <!-- <div class="letter">
-                    <div class="text">
-                        <str
-                    </div>
-                </div> -->
-            </div>
+            <div class="envelope"></div>
+            <span class="corner-text">To: My Khang</span>
             <div class="heart"></div>
         </div>
     </div>
@@ -135,7 +130,7 @@
     <h2>Noel này m có rảnh để đi chơi với t khom? &#128535;</h2>
     <div class="button-row">
       <button onclick="goToPage(2)">Có</button>
-      <button onclick="goToPage(2)">Kó</button>
+      <button onclick="createButton()">Hong</button>
     </div>
     <img src="shy.gif" alt="fun gif" style="display:block;margin:0 auto 20px auto;max-width:250px;">
   </div>
@@ -145,20 +140,14 @@
     <h1></h1>
     <h2>Chọn ngày đi nè &#128525;</h2>
     <input id="selectedDate" type="date" value="2025-12-25" style="display:block;margin:20px auto;padding:10px;font-size:18px;">
-    <button onclick="saveDate()">Submit</button>
+    <img src="date.gif" alt="fun gif" style="display:block;margin:0 auto 20px auto;max-width:250px;">
+    <button onclick="saveDate()">Oke</button>
   </div>
 
   <!-- Page 3 -->
   <div id="page3" class="page">
     <h1></h1>
-    <h2>Chọn chỗ đi, bao nhiêu cũng dc nha &#128541;</h2>
-
-    <div class="image-item">
-      <div class="circle-image">
-        <img src="allinbao.jpg" alt="Image 1">
-      </div>
-        <label style="display:block;margin-top:8px;"><input type="checkbox" value="Image 1"> All in Bao</label>
-    </div>
+    <h2>Chọn chỗ đi ăn nha &#128541;</h2>
 
     <div class="image-item">
       <div class="circle-image">
@@ -174,20 +163,7 @@
         <label style="display:block;margin-top:8px;"><input type="checkbox" value="Image 3"> Hấp Thủy Nhiệt</label>
     </div>
 
-    <div class="image-item">
-      <div class="circle-image">
-        <img src="chean.jpg" alt="Image 4">
-      </div>
-        <label style="display:block;margin-top:8px;"><input type="checkbox" value="Image 4"> Chè An</label>
-    </div>
-
-    <div class="image-item">
-      <div class="circle-image">
-        <img src="nhatho.jpg" alt="Image 4">
-      </div>
-        <label style="display:block;margin-top:8px;"><input type="checkbox" value="Image 4"> Nhà Thờ Đức Bà</label>
-    </div>
-    <button onclick="submitImages()">Submit</button>
+    <button onclick="submitImages()">Xong ròi</button>
   </div>
 
   <!-- Page 4 -->
@@ -199,6 +175,7 @@
     <h3>Ngày đi chơi:</h3>
     <p id="final-date" style="text-align:center;font-size:20px;"></p>
     <h2>Chụp màn hình lại nha hihi &#128248;</h2>
+    <img src="yes.gif" alt="fun gif" style="display:block;margin:0 auto 20px auto;max-width:250px;">
   </div>
 
   <script>
@@ -207,8 +184,12 @@
     const envelope = document.querySelector(".envelope-wrapper");
         const heart = document.querySelector(".heart");
         heart.addEventListener("click", ()=>{
-            envelope.classList.toggle("flap")
-            goToPage(1);
+            envelope.classList.toggle("flap");
+            setTimeout(() => {
+              envelope.classList.add("hide");
+              goToPage(1);
+            }, 1200);
+            
         })
 
     function goToPage(num) {
@@ -254,6 +235,16 @@
       document.getElementById('final-date').textContent = formatDate(chosenDate);
 
       goToPage(4);
+    }
+    function  createButton() {
+      const btn = document.createElement("button");
+      btn.textContent = "Có đi màaaa";
+
+      btn.onclick = () => {
+        goToPage(2);
+      };
+
+      page1.appendChild(btn);
     }
   </script>
 </body>

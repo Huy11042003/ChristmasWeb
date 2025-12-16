@@ -8,6 +8,16 @@
     --txt-color: #444;
     --heart-color: rgb(252, 8, 231);
   }
+@font-face {
+  font-family: "PlaywriteVN";
+  src: url("fonts/PlaywriteVN-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+.corner-text {
+  font-family: "PlaywriteVN", cursive;
+  transform: rotate(-6deg);
+}
 .container {
   height: 100vh;
   display: grid;
@@ -32,6 +42,11 @@
     border-left: 150px solid transparent;
     transform-origin: top;
     transition: all 0.5s ease-in-out 0.7s;
+}
+.envelope-wrapper.hide {
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
 }
 .container .envelope-wrapper .envelope::after{
     content: "";
