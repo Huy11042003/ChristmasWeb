@@ -10,7 +10,7 @@
   }
 @font-face {
   font-family: "PlaywriteVN";
-  src: url("fonts/PlaywriteVN-VariableFont_wght.ttf") format("truetype");
+  src: url("../fonts/PlaywriteVN-VariableFont_wght.ttf") format("truetype");
   font-weight: 100 900;
   font-style: normal;
 }
