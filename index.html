@@ -23,7 +23,7 @@
   <!-- Page 1 -->
   <div id="page1" class="page">
     <h1></h1>
-    <h2>Noel này m có rảnh để đi chơi với t khom? &#128535;</h2>
+    <h2>Cuối năm đến rùi m có rảnh để đi chơi với t hong? &#128535;</h2>
     <div class="button-row">
       <button onclick="goToPage(2)">Có</button>
       <button onclick="createButton()">Hong</button>
@@ -35,7 +35,7 @@
   <div id="page2" class="page">
     <h1></h1>
     <h2>Chọn ngày đi nè &#128525;</h2>
-    <input id="selectedDate" type="date" value="2025-12-25" style="display:block;margin:20px auto;padding:10px;font-size:18px;">
+    <input id="selectedDate" type="date" value="2025-12-26" style="display:block;margin:20px auto;padding:10px;font-size:18px;">
     <img src="img/date.gif" alt="fun gif" style="display:block;margin:0 auto 20px auto;max-width:250px;">
     <button onclick="saveDate()">Oke</button>
   </div>
@@ -105,7 +105,7 @@
   <!-- Page 4 -->
   <div id="page4" class="page">
     <h1></h1>
-    <h2>Ăn xong dạo phố hay đi uống nước ha &#128073; &#128072;</h2>
+    <h2>Ăn xong đi uống nước ha &#128073; &#128072;</h2>
     <img src="img/walk.gif" alt="fun gif" style="display:block;margin:0 auto 20px auto;max-width:250px;">
     <button onclick="goToPage(5)">Oke luôn</button>
   </div>
@@ -126,7 +126,15 @@
 
   <script>
     let chosenDate = '';
+    const dateInput = document.getElementById("selectedDate");
 
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, "0");
+    const dd = String(today.getDate()).padStart(2, "0");
+
+    dateInput.min = `${yyyy}-${mm}-${dd}`;
+    dateInput.max = "2025-12-31";
     const envelope = document.querySelector(".envelope-wrapper");
         const heart = document.querySelector(".heart");
         heart.addEventListener("click", ()=>{
@@ -245,17 +253,17 @@
     }
 
     function closeMenu() {
-    document.getElementById('menu-overlay').style.display = 'none';
+      document.getElementById('menu-overlay').style.display = 'none';
+      }
+
+      function submitImages() {
+      document.getElementById('selected-dish').textContent =
+        selectedDish || 'No dish selected';
+
+      document.getElementById('final-date').textContent = chosenDate;
+
+      goToPage(4);
     }
-
-    function submitImages() {
-    document.getElementById('selected-dish').textContent =
-      selectedDish || 'No dish selected';
-
-    document.getElementById('final-date').textContent = chosenDate;
-
-    goToPage(4);
-  }
     function  createButton() {
       const btn = document.createElement("button");
       btn.textContent = "Có đi màaaa";
